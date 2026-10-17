@@ -57,7 +57,7 @@ const patterns=[
 ["Raindrop","Easy","color",["00100","01110","11111","11111","01110"]]
 ];
 const palette=["#273d32","#d98c55","#6b8fb8","#e2c45f"];
-function scalePattern(p,s){return p.flatMap(row=>[...row].flatMap(ch=>Array(s).fill(ch==="1"?1:0)) .reduce((a,v,i)=>{if(i%s===0)a.push([]);a[a.length-1].push(v);return a},[]).slice(0,s));}
+function scalePattern(p,s){return p.flatMap(row=>[...row].flatMap(ch=>Array(s).fill(ch?1:0)) .reduce((a,v,i)=>{if(i%s===0)a.push([]);a[a.length-1].push(v);return a},[]).slice(0,s));}
 function makeGrid(rows,s){const out=[];rows.forEach(row=>{for(let y=0;y<s;y++)out.push([...row].flatMap(ch=>Array(s).fill(ch==="1"?1:0))) });return out}
 const colors=["#273d32","#d98c55","#6b8fb8","#e2c45f"];
 let puzzles=[];
